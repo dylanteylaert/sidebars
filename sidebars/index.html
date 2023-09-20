@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebars</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <aside class="slidebar">
+        <header class="slidebar-header">   
+            <h2 class="logo-img">Beaver's life</h2>
+            <img src="" alt="">
+        </header>
+        <nav x-data="{ open: false }" id="myDIV">
+            <ul>
+                <li>
+                    <a href="{{ route('index') }}">
+                        <i class="fa-solid fa-earth-europe"></i>
+                        <span>Retour au site</span> 
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('dashboard') }}">
+                        <i class="fa-solid fa-house"></i>
+                        <span>Tableau de bord</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('profil', ['id' => auth()->user()->id ]) }}">
+                        <i class="fa-solid fa-user"></i>
+                        <span>Profil</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('membres') }}">
+                        <i class="fas fa-users"></i>
+                        <span>Membres</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('personnage') }}">
+                        <i class="fa-regular fa-address-card"></i>
+                        <span>Personnages</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('recrutement') }}">
+                        <i class="fa-solid fa-user"></i>
+                        <span>Recrutement</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('image') }}">
+                        <i class="fa-solid fa-camera-retro"></i>
+                        <span>Galerie</span>
+                    </a>
+                </li>       
+            </ul>
+            <form method="POST" action="{{ route('logout') }}">
+                <button href="route('logout')"
+                        onclick="event.preventDefault();
+                                    this.closest('form').submit();">
+                    <span>
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span>Déconnecter</span>
+                    </span>
+                </button>
+            </form>
+        </nav>
+    </aside>
+</body>
+</html>
